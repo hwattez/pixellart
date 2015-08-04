@@ -1,0 +1,195 @@
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Lobster', cursive;
+}
+
+.row{
+	margin: 0;
+	background-image: url('../img/overlay-pattern.png');
+}
+
+#sidebar{
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: rgb(44, 62, 80);
+	padding: 0px;
+}
+
+#sidebar>h1{
+	color: white;
+	text-align: center;
+	padding: 30px 0px;
+	font-size: 43px;
+}
+
+#menu_sidebar{
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+	overflow: hidden;
+}
+
+#menu_sidebar>li>a{
+	background-color: rgb(32, 44, 57);
+	color: white;
+	border-radius: 0px;
+}
+
+#menu_sidebar>li>a:hover{
+	opacity: 0.5;
+	transition-property: opacity;
+	transition-duration: 1s;
+	transition-timing-fonction: linear;
+}
+
+body{
+	background: url('../img/background.jpg') no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 0 0;
+}
+
+header h1{
+	font-size: 1000%;
+	color: rgb(44,62,80);
+}
+
+header h2{
+	line-height: 100%;
+}
+
+header h3{
+	font-size: 50px;
+	text-align: center;
+	color: white;
+}
+
+#videos{
+	background-color: rgba(44,62,80,0.8);
+}
+
+#videos .col-md-4, #videos .col-md-8{
+	padding:0px;
+	background-size: cover;
+	background-position: center;
+}
+
+#videos .infoVideo{
+	background-color: rgba(32, 44, 57, 0.9);
+	height: 100%;
+	color: white;
+	text-align: center;
+	font-size: 100px;
+	opacity: 0;
+}
+
+#videos .infoVideo:hover{
+	cursor: pointer;
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 1s;
+	transition-timing-fonction: linear;
+}
+
+#videos .col-md-4{
+	height: 250px;
+	line-height: 200px;
+}
+
+#videos .col-md-8{
+	height: 500px;
+	line-height: 400px;
+}
+
+#videos .mix
+{
+	display: none;
+}
+
+#videos img
+{
+	width:100%;
+}
+
+#videos>nav{
+	text-align: center;
+	margin: 10px 0px;
+}
+
+#videos>nav button{
+	background-color: transparent;
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+	color: white;
+	border: solid 1px white;
+}
+
+#contact{
+	background-color: rgba(44,62,80,0.5);
+}
+
+#contact h2{
+	color: white;
+	font-size: 70px;
+	text-align: center;
+}
+
+#contact h3{
+	text-align: center;
+	color: rgb(44,62,80);
+}
+
+#contact>#map{
+	margin: 50px 0;
+	height: 250px;
+}
+
+#contact input, #contact textarea{
+	margin: 10px 0;
+	background-color: transparent;
+	font-family: 'Lobster', cursive;
+	font-size: 17px;
+	color: white;
+}
+
+#contact textarea{
+	height: 122px;
+}
+
+#contact button{
+	margin: 20px 0;
+	background-color: rgb(44, 62, 80);
+}
+
+#myModal .modal-body{
+	padding-bottom: 56.25% !important;
+}
+
+#myModal .modal-header, #myModal .modal-footer{
+	border: none;
+	color: white;
+}
+
+#myModal .close{
+	color: white;
+}
+
+#myModal .modal-content{
+	border-radius: 0px;
+	background-color: rgb(32, 44, 57);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
