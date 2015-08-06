@@ -1,47 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="utf-8">
-		
-		<!-- Mobile Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		
-		<!-- jQuery -->
-		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		
-		<!-- Bootstrap -->
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		
-		<!-- Google Font -->
-		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-		
-		<!-- Google Map -->
-		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-		
-		<!-- Mixitup -->
-		<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
-		
-		<!-- FontAwesome -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		
-		<!-- My CSS -->
-		<link rel="stylesheet" type="text/css" href="css/design.css">
-		<link rel="stylesheet" type="text/css" href="css/responsive-design.css">
-	</head>
-	
-	<body class="col-xs-offset-2">
-	
-		<section id="sidebar" class="col-xs-2">
-			<h1><span class="hidden-xs hidden-sm">Pixell'Art</span><span class="visible-xs visible-sm">P'A</span></h1>
-			<ul id="menu_sidebar" class="nav nav-pills nav-stacked">
-				<li class="active"><a href="#"><i class="fa fa-home"></i> <span class="hidden-xs">Accueil</span></a></li>
-				<li><a href="#videos"><i class="fa fa-video-camera"></i> <span class="hidden-xs">Vidéos</span></a></li>
-				<li><a href="#contact"><i class="fa fa-phone"></i> <span class="hidden-xs">Contact</span></a></li>
-				<li><a href="#">Follow me</a></li>
-			</ul>
-		</section>
-		
 		<header class="row minHeightScreen">
 			<div class="col-xs-12">
 				<h1>Pixell'Art</h1>
@@ -50,14 +6,14 @@
 				<h2 class="pull-right"><small>by</small> Loïc Wattez</h2>
 			</div>
 			<div class="col-xs-12">
-				<hr></hr>
+				<hr>
 			</div>
 			<div class="col-xs-12">
 				<h3>Memories for Eternity</h3>
 			</div>
 		</header>
 		
-		<section id="videos" class="row minHeightScreen">
+		<div id="videos" class="row minHeightScreen">
 			<nav class="col-xs-12">
 				<div class="btn-group" role="group" aria-label="...">
 					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".inde, .france">Toutes</button>
@@ -127,9 +83,9 @@
 					<i class="fa fa-youtube-play"></i>
 				</div>
 			</div>
-		</section>
+		</div>
 		
-		<section id="contact" class="row minHeightScreen">
+		<div id="contact" class="row minHeightScreen">
 			<div id="contact_title" class="col-xs-12">
 				<h2>Contactez-moi</h2>
 				<h3>Prestation, information, question...</h3>
@@ -150,7 +106,7 @@
 			<div class="col-sm-12">
 				<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-paper-plane"></i></button>
 			</div>
-		</section>
+		</div>
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -169,48 +125,3 @@
 				</div>
 			</div>
 		</div>
-	
-		<script>
-		
-			// Au chargement de la page
-			$(function()
-			{
-				$(".minHeightScreen").css("min-height", $(window).height() + "px");
-				$('#videos').mixItUp();
-				initialisation();
-			});
-			
-			// Au scroll de la page
-			$(window).scroll(function()
-			{
-				var scrollTop = $(this).scrollTop();
-				dynamicBackground(scrollTop);
-			});
-			
-			function dynamicBackground(scrollTop)
-			{
-				var limitInferieur = $("body").height() - $(window).height();
-				var percentSup = scrollTop/$("header").height()*100;
-				var percentInf = (1 - (scrollTop-limitInferieur) / $(window).height()) * 100 - 85;
-				
-				if(percentSup < 100)
-					$("body").css('background-position','0 ' + percentSup + '%');
-				else if(percentInf<100)
-					$("body").css('background-position','0 ' + percentInf + '%');
-				else
-					$("body").css('background-position','0 100%');
-			}
-			
-			function initialisation(){
-				var optionsCarte = {
-					zoom: 14,
-					center:  new google.maps.LatLng(50.2537449, 2.8948495),
-					scrollwheel: false
-				}
-				var maCarte = new google.maps.Map(document.getElementById("map"), optionsCarte);
-			}
-			
-		</script>
-	
-	</body>
-</html>
