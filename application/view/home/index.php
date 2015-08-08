@@ -21,68 +21,27 @@
 					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".inde">Inde</button>
 				</div>
 			</nav>
-			<div class="col-md-8 col-xs-12 mix inde" data-myorder="1" style="background-image: url('img/8.png');">
-				<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal">
-					<i class="fa fa-youtube-play"></i>
-					<h2>La trompette qui pète !</h2>
+
+			<?php if(isset($videos[0])) { ?>
+				<div class="col-md-8 col-xs-12 mix <?php echo $videos[0]->tags; ?>" data-myorder="1" style="background-image: url('<?php echo $videos[0]->getPicture(); ?>');">
+					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $videos[0]->getYoutube(); ?>">
+						<i class="fa fa-youtube-play"></i>
+						<h2 class="videoTitle"><?php echo $videos[0]->title; ?></h2>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="2" style="background-image: url('img/9.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-					<h4>La trompette qui pète !</h4>
+				<?php unset($videos[0]); ?>
+			<?php } ?>
+
+			<?php foreach($videos as $video) { ?>
+				<div class="col-md-4 col-xs-6 mix <?php echo $video->tags; ?>" data-myorder="2" style="background-image: url('<?php echo $video->getPicture(); ?>');">
+					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $video->getYoutube(); ?>">
+						<i class="fa fa-youtube-play"></i>
+						<h4 class="videoTitle"><?php echo $video->title; ?></h4>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="3" style="background-image: url('img/10.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="4" style="background-image: url('img/11.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix france" data-myorder="5" style="background-image: url('img/12.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="6" style="background-image: url('img/8.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="7" style="background-image: url('img/9.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="8" style="background-image: url('img/10.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="9" style="background-image: url('img/11.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix france" data-myorder="10" style="background-image: url('img/12.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="11" style="background-image: url('img/8.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="col-md-4 col-xs-6 mix inde" data-myorder="12" style="background-image: url('img/9.png');">
-				<div class="col-xs-12 infoVideo">
-					<i class="fa fa-youtube-play"></i>
-				</div>
-			</div>
+			<?php } ?>
+
+
 		</div>
 		
 		<div id="contact" class="row minHeightScreen">
@@ -114,10 +73,10 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">La trompette qui pète</h4>
+						<h4 class="modal-title" id="myModalLabel"></h4>
 					</div>
 					<div class="modal-body embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rUbCYZBWYUA" allowfullscreen></iframe>
+						<iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>

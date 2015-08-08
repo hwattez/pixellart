@@ -3,6 +3,7 @@ $(function()
 {
     $(".minHeightScreen").css("min-height", $(window).height() + "px");
     $('#videos').mixItUp();
+    $( ".infoVideo" ).on( "click", modalUpdate );
     initialisation();
 });
 
@@ -34,4 +35,14 @@ function initialisation(){
         scrollwheel: false
     }
     var maCarte = new google.maps.Map(document.getElementById("map"), optionsCarte);
+}
+
+function modalUpdate(){
+
+    var youtube = $(this).attr('data-youtube');
+    var title = $(this).children('.videoTitle').text();
+
+    $('.embed-responsive-item').attr('src', youtube);
+    $('.modal-title').text(title);
+
 }
