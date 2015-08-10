@@ -4,6 +4,7 @@ $(function()
     $(".minHeightScreen").css("min-height", $(window).height() + "px");
     $('#videos').mixItUp();
     $( ".infoVideo" ).on( "click", modalUpdate );
+    $('#myModal').on('hidden.bs.modal', modalDelete );
     initialisation();
 });
 
@@ -44,5 +45,12 @@ function modalUpdate(){
 
     $('.embed-responsive-item').attr('src', youtube);
     $('.modal-title').text(title);
+
+}
+
+function modalDelete(){
+
+    $('.embed-responsive-item').attr('src', '');
+    $('.modal-title').text('');
 
 }

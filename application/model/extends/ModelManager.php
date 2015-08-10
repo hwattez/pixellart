@@ -23,6 +23,7 @@ abstract class ModelManager{
 		$query=DB::getInstance()->prepare($sql);
 		$query->execute();
 		$query->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, self::getClass());
+		
 		return $query->fetchAll();
 		
 	}

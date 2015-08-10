@@ -17,8 +17,8 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         
         <!-- My CSS -->
-        <link rel="stylesheet" type="text/css" href="css/design.css">
-        <link rel="stylesheet" type="text/css" href="css/responsive-design.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/design.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/responsive-design.css">
     </head>
     
     <body class="col-xs-offset-2">
