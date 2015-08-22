@@ -23,20 +23,20 @@
 			</nav>
 
 			<?php if(isset($videos[0])) { ?>
-				<div class="col-md-8 col-xs-12 mix <?php echo $videos[0]->tags; ?>" data-myorder="1" style="background-image: url('<?php echo $videos[0]->getPicture(); ?>');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $videos[0]->getYoutube(); ?>">
-						<i class="fa fa-youtube-play"></i>
-						<h2 class="videoTitle"><?php echo $videos[0]->title; ?></h2>
+				<div class="col-md-8 col-xs-12 mix <?php echo $videos[0]->get('tags'); ?>" data-myorder="1" style="background-image: url('<?php echo $videos[0]->get('picture', 'large'); ?>');">
+					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $videos[0]->get('youtube'); ?>">
+						<i class="fa fa-video-camera"></i>
+						<h2 class="videoTitle"><?php echo $videos[0]->get('title'); ?></h2>
 					</div>
 				</div>
 				<?php unset($videos[0]); ?>
 			<?php } ?>
 
 			<?php foreach($videos as $video) { ?>
-				<div class="col-md-4 col-xs-6 mix <?php echo $video->tags; ?>" data-myorder="2" style="background-image: url('<?php echo $video->getPicture(); ?>');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $video->getYoutube(); ?>">
-						<i class="fa fa-youtube-play"></i>
-						<h4 class="videoTitle"><?php echo $video->title; ?></h4>
+				<div class="col-md-4 col-xs-6 mix <?php echo $video->get('tags'); ?>" data-myorder="2" style="background-image: url('<?php echo $video->get('picture', 'medium'); ?>');">
+					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $video->get('youtube'); ?>">
+						<i class="fa fa-video-camera"></i>
+						<h4 class="videoTitle"><?php echo $video->get('title'); ?></h4>
 					</div>
 				</div>
 			<?php } ?>
