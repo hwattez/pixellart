@@ -28,9 +28,9 @@ class TagsManager extends ModelManager
 			$tagg = new Tag();
 			$tagg->set('tag', $tag);
 			$tagg->save();
-			return TagsManager::getOrInsertByTag($tag);
-		}else
-			return $result;
-
+			$result = $tagg;
+		}
+		
+		return $result;
 	}
 }

@@ -15,6 +15,9 @@ $(window).scroll(function()
     dynamicBackground(scrollTop);
 });
 
+// A l'envoie du message
+$('#msgButton').click(function(){sendMessage();});
+
 function dynamicBackground(scrollTop)
 {
     var limitInferieur = $("body").height() - $(window).height();
@@ -53,4 +56,18 @@ function modalDelete(){
     $('.embed-responsive-item').attr('src', '');
     $('.modal-title').text('');
 
+}
+
+function sendMessage()
+{
+    var nom = $('#nom').val();
+    var email = $('#email').val();
+    var website = $('#website').val();
+        website = website != ''  ? website : 'null';
+    var message = $('#message').val();
+
+    if(nom != '' && email != '' && message != '')
+        $.get( "/home/message/" + nom + "/" + email + "/" + website + "/" + message + "/", function( data ) {
+            alert( 'Le message a bien été envoyé !' );
+        });
 }

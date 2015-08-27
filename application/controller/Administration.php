@@ -2,14 +2,47 @@
 
 class Administration
 {
+    public function __construct()
+    {
+        if(!LOGGED && $_SERVER['REQUEST_URI'] != '/administration/login/'){
+            header('location: ' . URL . 'administration/login/');
+            exit;
+        }
+    }
+
     public function index()
     {
-        $nb_videos = VideosManager::count();
+        $videos = VideosManager::getAll();
+        $nb_videos = count($videos);
         $nb_tags = TagsManager::count();
+        $nb_messages = MessagesManager::count();
 
         require APP . 'view/_templates/admin/header.php';
         require APP . 'view/administration/index.php';
         require APP . 'view/_templates/admin/footer.php';
+    }
+
+    public function login()
+    {
+        if(isset($_POST['login']) && isset($_POST['password']) && $_POST['login'] === 'admin' && md5($_POST['password']) === 'a826e9303d8dc8f1f5e5e7fff1b01c15'){
+            setcookie('login', $_POST['login'], time() + 3600, '/');
+            setcookie('password', $_POST['password'], time() + 3600, '/');
+            header('location: ' . URL . 'administration/index/');
+            exit;
+        }
+
+        require APP . 'view/_templates/admin/header.php';
+        require APP . 'view/administration/login.php';
+        require APP . 'view/_templates/admin/footer.php';
+    }
+
+    public function logout()
+    {
+        setcookie('login', '', time() - 3600, '/');
+        setcookie('password', '', time() - 3600, '/');
+        unset($_COOKIE['login'],$_COOKIE['password']);
+
+        header('location: ' . URL . 'administration/login/');
     }
 
     public function videos()
@@ -35,8 +68,10 @@ class Administration
                 $forms = $video->getTableColumnsType();
                 if(!empty($_POST) OR !empty($_FILES)){
                     $video->setFromForms();
-                    if($error = $video->save())
+                    if($error = $video->save()){
                         header('location: ' . URL . 'administration/videos/');
+                        exit;
+                    }
                 }
                 require APP . 'view/_templates/admin/header.php';
                 require APP . 'view/administration/video/new.php';
@@ -77,7 +112,15 @@ class Administration
             default:
                 header('location: ' . URL . 'error/');
         }
+    }
 
+    public function messages()
+    {
+        $messages = MessagesManager::getAll('id DESC');
+        
+        require APP . 'view/_templates/admin/header.php';
+        require APP . 'view/administration/messages.php';
+        require APP . 'view/_templates/admin/footer.php';
     }
 
 }

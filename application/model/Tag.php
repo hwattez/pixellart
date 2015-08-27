@@ -13,6 +13,8 @@ class Tag extends Model
 	public function get($attr)
 	{
 		switch($attr){
+            case 'id':
+                return isset($this->id) ? $this->id : $this->getNextId();
 			default:
 				return $this->$attr;
 		}
@@ -29,7 +31,12 @@ class Tag extends Model
 		$pdo = parent::get('pdo');
         $query = $pdo->prepare($sql);
 
-        return $query->execute(parent::get('tableColumns'));
+        $success = $query->execute(parent::get('tableColumns'));
+
+        if($success)
+            $this->id = $pdo->lastInsertId();
+
+        return $success;
     }
 	
 }

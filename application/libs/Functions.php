@@ -24,4 +24,14 @@
 
 		}
 
+		public static function isLogged()
+		{
+			return isset($_COOKIE['login']) && isset($_COOKIE['password']) && $_COOKIE['login'] === 'admin' && md5($_COOKIE['password']) === 'a826e9303d8dc8f1f5e5e7fff1b01c15';
+		}
+
+		public static function isValidEmail()
+		{
+			return true;
+		}
+
 	}

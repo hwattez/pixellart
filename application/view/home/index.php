@@ -16,9 +16,10 @@
 		<div id="videos" class="row minHeightScreen">
 			<nav class="col-xs-12">
 				<div class="btn-group" role="group" aria-label="...">
-					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".inde, .france">Toutes</button>
-					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".france">France</button>
-					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".inde">Inde</button>
+					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".mix">Toutes</button>
+					<?php foreach($tags as $tag) { ?>
+						<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".<?php echo $tag->get('tag'); ?>"><?php echo ucfirst($tag->get('tag')); ?></button>
+					<?php } ?>
 				</div>
 			</nav>
 
@@ -55,15 +56,15 @@
 				</div>
 			</div>
 			<div class="col-sm-6 formulaire">
-				<input type="text" class="form-control" name="nom" placeholder="Votre nom *">
-				<input type="email" class="form-control" name="email" placeholder="Votre email *">
-				<input type="text" class="form-control" name="nom" placeholder="Votre site internet">
+				<input type="text" class="form-control" id="nom" placeholder="Votre nom *">
+				<input type="email" class="form-control" id="email" placeholder="Votre email *">
+				<input type="text" class="form-control" id="website" placeholder="Votre site internet">
 			</div>
 			<div class="col-sm-6 formulaire">
-				<textarea class="form-control" name="message" placeholder="Votre message *"></textarea>
+				<textarea class="form-control" id="message" placeholder="Votre message *"></textarea>
 			</div>
 			<div class="col-sm-12">
-				<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-paper-plane"></i></button>
+				<button id="msgButton" class="btn btn-primary btn-block"><i class="fa fa-paper-plane"></i></button>
 			</div>
 		</div>
 

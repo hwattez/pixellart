@@ -22,12 +22,13 @@ abstract class Model
 
     public function get($attr)
     {
-        return $this->$attr;
-    }
-
-    public function getId()
-    {
-        return isset($this->id) ? $this->id : $this->getNextId();
+        switch($attr)
+        {
+            case 'id':
+                return isset($this->id) ? $this->id : $this->getNextId();
+            default:
+                return $this->$attr;
+        }
     }
 
     public function getTableColumnsType()
@@ -52,7 +53,7 @@ abstract class Model
         foreach($_POST as $key => $val)
             $this->$key = Functions::secure($val);
         foreach($_FILES as $key => $val)
-            $this->$key = (Functions::upload($key, ROOT . 'public/img/' . $this->table . '/' . $this->getId() . '/', 'picture', $this->pictureFormats) OR $this->$key);
+            $this->$key = (Functions::upload($key, ROOT . 'public/img/' . $this->table . '/' . $this->get('id') . '/', 'picture', $this->pictureFormats) OR $this->$key);
     }
 
     /////////////////////////
@@ -90,7 +91,12 @@ abstract class Model
         $sql = substr($sql,0,-1) . ')';
         $query = $this->pdo->prepare($sql);
 
-        return $query->execute($this->tableColumns);
+        $success = $query->execute($this->tableColumns);
+
+        if($success)
+            $this->id = $this->pdo->lastInsertId();
+
+        return $success;
     }
         
     protected function update() 
