@@ -68,6 +68,6 @@ function sendMessage()
 
     if(nom != '' && email != '' && message != '')
         $.get( "/home/message/" + nom + "/" + email + "/" + website + "/" + message + "/", function( data ) {
-            alert( 'Le message a bien été envoyé !' );
+            sweetAlert('Bonne nouvelle !', 'Le message a bien été envoyé !', 'success');
         });
 }

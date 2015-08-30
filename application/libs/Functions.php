@@ -34,4 +34,18 @@
 			return true;
 		}
 
+		public static function secondsTo($time)
+		{
+			switch(true){
+				case $time < 60 :
+					return $time . ' seconde(s)';
+				case $time < 3600 :
+					return intval($time / 60) . ' minute(s)';
+				case $time < 86400 :
+					return intval($time / 3600) . ' heure(s)';
+				default:
+					return intval($time / 86400) . ' jour(s)';
+			}
+		}
+
 	}

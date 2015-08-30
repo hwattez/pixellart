@@ -58,7 +58,7 @@
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown">
                         <a href="<?php echo URL; ?>administration/logout/" alt="Se déconnecter">
-                            <i class="fa fa-sign-out"></i>
+                            <i class="fa fa-sign-out fa-fw"></i> Sé déconnecter
                         </a>
                         <!-- /.dropdown-messages -->
                     </li>
@@ -87,7 +87,19 @@
                                 <a href="<?php echo URL; ?>administration/tags/"><i class="fa fa-tags fa-fw"></i> Tags</a>
                             </li>
                             <li>
-                                <a href="<?php echo URL; ?>administration/messages/"><i class="fa fa-QQCH fa-fw"></i> Messages</a>
+                                <a href="<?php echo URL; ?>administration/messages/"><i class="fa fa-envelope fa-fw"></i> Messages</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-tasks fa-fw"></i> Tâches<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="<?php echo URL; ?>administration/tasks/">Toutes</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo URL; ?>administration/task/new/">Nouvelle</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
                             </li>
                         </ul>
                     </div>
@@ -96,4 +108,4 @@
                 <!-- /.navbar-static-side -->
             <?php } ?>
         </nav>
-        <div id="page-wrapper">
+        <div id="page-wrapper" style="padding-bottom: 20px;">

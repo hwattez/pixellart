@@ -10,6 +10,9 @@
         <!-- Mixitup -->
         <script src="<?php echo URL; ?>addons/mixitup/src/jquery.mixitup.js"></script>
 
+        <!-- SweetAlert -->
+        <script src="<?php echo URL; ?>addons/sweetalert/sweetalert.min.js"></script>
+
         <!-- MyJS -->
         <script src="<?php echo URL; ?>js/application.js"></script>
 	

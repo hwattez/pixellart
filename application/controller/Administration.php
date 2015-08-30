@@ -13,9 +13,23 @@ class Administration
     public function index()
     {
         $videos = VideosManager::getAll();
+        $lastTimeVideo = empty($videos) ? 0 : (strtotime(date('Y-m-d')) - strtotime(end($videos)->get('date')));
         $nb_videos = count($videos);
+
         $nb_tags = TagsManager::count();
-        $nb_messages = MessagesManager::count();
+
+        $messages = MessagesManager::getAll();
+        $lastTimeMessage = empty($messages) ? 0 : (strtotime(date('Y-m-d')) - strtotime(end($messages)->get('date')));
+        $nb_messages = count($messages);
+
+        $tasks = TasksManager::getAll();
+        $lastTimeTask = empty($tasks) ? 0 : (strtotime(date('Y-m-d')) - strtotime(end($tasks)->get('date')));
+        $nb_tasks = count($tasks);
+
+        $notifications = array($lastTimeVideo => array('fa' => 'fa-video-camera', 'text' => 'Dernière vidéo'),
+                               $lastTimeTask => array('fa' => 'fa-tasks', 'text' => 'Dernière tâche'),
+                               $lastTimeMessage => array('fa' => 'fa-envelope', 'text' => 'Dernier message'));
+        ksort($notifications);
 
         require APP . 'view/_templates/admin/header.php';
         require APP . 'view/administration/index.php';
@@ -121,6 +135,52 @@ class Administration
         require APP . 'view/_templates/admin/header.php';
         require APP . 'view/administration/messages.php';
         require APP . 'view/_templates/admin/footer.php';
+    }
+
+    public function tasks()
+    {
+        $tasks = TasksManager::getAll('completed, id');
+        
+        require APP . 'view/_templates/admin/header.php';
+        require APP . 'view/administration/tasks.php';
+        require APP . 'view/_templates/admin/footer.php';
+    }
+
+    public function task($action, $id=null)
+    {
+
+        if(is_null($id))
+            $task = new Task();
+        else
+            $task = TasksManager::getById($id);
+
+        switch(true)
+        {
+            case ($action == "new" OR $action == "edit"):
+                $forms = $task->getTableColumnsType();
+                if(!empty($_POST) OR !empty($_FILES)){
+                    $task->setFromForms();
+                    if($error = $task->save()){
+                        header('location: ' . URL . 'administration/tasks/');
+                        exit;
+                    }
+                }
+                require APP . 'view/_templates/admin/header.php';
+                require APP . 'view/administration/task/new.php';
+                require APP . 'view/_templates/admin/footer.php';
+                break;
+
+            case $action == "delete":
+                $task->delete();
+                header('location: ' . URL . 'administration/tasks/');
+                exit;
+                break;
+                
+            default:
+                header('location: ' . URL . 'error/');
+                exit;
+        }
+
     }
 
 }

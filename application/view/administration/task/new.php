@@ -1,6 +1,6 @@
 				<div class="row">
 	                <div class="col-lg-12">
-	                    <h1 class="page-header">Nouvelle vidéo</h1>
+	                    <h1 class="page-header">Nouvelle tâche</h1>
 	                </div>
 	                <!-- /.col-lg-12 -->
 	            </div>
@@ -19,13 +19,13 @@
 							<?php
 								switch($key){
 									case 'id':
-										echo Forms::$val($key, $video->$key, array('disabled' => 'disabled'));
+										echo Forms::$val($key, $task->$key, array('disabled' => 'disabled'));
 										break;
-									case 'picture':
-										echo Forms::$val($key, $video->get($key, 'medium'));
+									case 'completed':
+										echo Forms::$val($key, $task->$key, array('disabled' => 'disabled'));
 										break;
 									default:
-										echo Forms::$val($key, $video->$key);
+										echo Forms::$val($key, $task->$key);
 								}
 							?>
 						<?php } ?>

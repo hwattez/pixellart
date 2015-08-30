@@ -5,27 +5,34 @@
 	                <!-- /.col-lg-12 -->
 	            </div>
 	            <div class="row">
-					<table class="table table-bordered table-hover table-responsive">
-						<thead>
-							<tr>
-								<?php foreach($messages[0] as $key => $value) { ?>
-									<?php 
-										switch($key){
-											default:
-												echo "<th>$key</th>";
-										}
-									?>
-								<?php } ?>
-							</tr>
-						</thead>
-						<tbody style="text-align: center;">
-							<?php foreach($messages as $message) { ?>
+	            	<?php if(!empty($messages)) { ?>
+						<table class="table table-bordered table-hover table-responsive">
+							<thead>
 								<tr>
-									<?php foreach($message as $key => $value) { ?>
-										<td><?php echo $value; ?></td>
+									<?php foreach($messages[0] as $key => $value) { ?>
+										<?php 
+											switch($key){
+												default:
+													echo "<th>$key</th>";
+											}
+										?>
 									<?php } ?>
 								</tr>
-							<?php } ?>
-						</tbody>
-					</table>
+							</thead>
+							<tbody style="text-align: center;">
+								<?php foreach($messages as $message) { ?>
+									<tr>
+										<?php foreach($message as $key => $value) { ?>
+											<td><?php echo $value; ?></td>
+										<?php } ?>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+					<?php } else { ?>
+						<div class="alert alert-warning" role="alert">
+							<p>Il n'y a aucun message à afficher</p>
+						</div>
+					<?php } ?>
+
 				</div>

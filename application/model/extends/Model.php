@@ -51,7 +51,7 @@ abstract class Model
     public function setFromForms()
     {
         foreach($_POST as $key => $val)
-            $this->$key = Functions::secure($val);
+            $this->$key = empty($val) ? $this->$key : Functions::secure($val);
         foreach($_FILES as $key => $val)
             $this->$key = (Functions::upload($key, ROOT . 'public/img/' . $this->table . '/' . $this->get('id') . '/', 'picture', $this->pictureFormats) OR $this->$key);
     }

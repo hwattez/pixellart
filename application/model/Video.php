@@ -37,13 +37,14 @@ class Video extends Model
 
     	// Insertion si inexistant des tags dans leur table et liaison dans la table correspondance
     	foreach(explode(' ', $this->tags) as $key)
-    	{
-	    	$tag = TagsManager::getOrInsertByTag($key);
-	    	$videotag = new VideoTag();
-	    	$videotag->id_video = $this->get('id');
-	    	$videotag->id_tag = $tag->get('id');
-	    	$videotag->save();
-	    }
+    		if($key != '')
+	    	{
+		    	$tag = TagsManager::getOrInsertByTag($key);
+		    	$videotag = new VideoTag();
+		    	$videotag->id_video = $this->get('id');
+		    	$videotag->id_tag = $tag->get('id');
+		    	$videotag->save();
+		    }
 
     	return $success;
     }

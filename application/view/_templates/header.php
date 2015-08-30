@@ -6,6 +6,9 @@
         
         <!-- Mobile Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <!-- Indexage Google -->
+        <meta name="robots" content="noindex,follow" />
         
         <!-- Bootstrap -->
         <link href="<?php echo URL; ?>addons/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +18,9 @@
         
         <!-- FontAwesome -->
         <link href="<?php echo URL; ?>addons/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- Sweetalert -->
+        <link href="<?php echo URL; ?>addons/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
         
         <!-- My CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/design.css">
@@ -29,6 +35,10 @@
                 <li class="active"><a href="#"><i class="fa fa-home"></i> <span class="hidden-xs">Accueil</span></a></li>
                 <li><a href="#videos"><i class="fa fa-video-camera"></i> <span class="hidden-xs">Vidéos</span></a></li>
                 <li><a href="#contact"><i class="fa fa-phone"></i> <span class="hidden-xs">Contact</span></a></li>
-                <li><a href="#">Follow me</a></li>
+                <li><br></li>
+                <li class="textAlignCenter">
+                    <a class="col-sm-12 hidden-xs" href="#">Follow me</a>
+                    <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                </li>
             </ul>
         </div>

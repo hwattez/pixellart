@@ -24,7 +24,7 @@ class Tag extends Model
     {
         $sql = "INSERT IGNORE INTO " . parent::get('table') . " VALUES(";
 
-        foreach(parent::get('tableColumns') as $key => &$val)
+        foreach(parent::get('tableColumns') as $key => $val)
             $sql .= ":$key,";
 
         $sql = substr($sql,0,-1) . ')';
