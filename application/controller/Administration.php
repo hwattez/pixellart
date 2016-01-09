@@ -105,7 +105,7 @@ class Administration
 
     public function tags()
     {
-        $tags = TagsManager::getAll('count');
+        $tags = TagsManager::getAll(array('count' => true));
         
         require APP . 'view/_templates/admin/header.php';
         require APP . 'view/administration/tags.php';
@@ -130,7 +130,7 @@ class Administration
 
     public function messages()
     {
-        $messages = MessagesManager::getAll('id DESC');
+        $messages = MessagesManager::getAll(array('count'=> true, 'order' => 'id DESC'));
         
         require APP . 'view/_templates/admin/header.php';
         require APP . 'view/administration/messages.php';
@@ -139,7 +139,7 @@ class Administration
 
     public function tasks()
     {
-        $tasks = TasksManager::getAll('completed, id');
+        $tasks = TasksManager::getAll(array('order' => 'completed, id'));
         
         require APP . 'view/_templates/admin/header.php';
         require APP . 'view/administration/tasks.php';

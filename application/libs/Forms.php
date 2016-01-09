@@ -6,7 +6,8 @@ class Forms{
 
 	public static function init($options)
 	{
-		foreach(get_class_vars(__CLASS__) as $key => &$val)
+		$attrs = get_class_vars(__CLASS__);
+		foreach($attrs as $key => &$val)
 			self::${$key} = isset($options[$key]) ? $options[$key] : null;
 	}
 

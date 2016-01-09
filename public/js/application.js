@@ -3,7 +3,7 @@ $(function()
 {
     $(".minHeightScreen").css("min-height", $(window).height() + "px");
     $('#videos').mixItUp();
-    $( ".infoVideo" ).on( "click", modalUpdate );
+    $( ".infoVideo").on( "click", modalUpdate );
     $('#myModal').on('hidden.bs.modal', modalDelete );
     initialisation();
 });
@@ -45,9 +45,13 @@ function modalUpdate(){
 
     var youtube = $(this).attr('data-youtube');
     var title = $(this).children('.videoTitle').text();
+    var url = $(this).children('a').attr('href');
 
     $('.embed-responsive-item').attr('src', youtube);
     $('.modal-title').text(title);
+    $('.modal-footer .facebook').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + url);
+    $('.modal-footer .twitter').attr('href', 'http://twitter.com/home?status=' + title + ' ' + url + ' @WattezL');
+    $('.modal-footer .googleP').attr('href', 'https://plus.google.com/share?url=' + url);
 
 }
 
@@ -71,3 +75,12 @@ function sendMessage()
             sweetAlert('Bonne nouvelle !', 'Le message a bien été envoyé !', 'success');
         });
 }
+
+// Google Analytics
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-67521657-1', 'auto');
+ga('send', 'pageview');

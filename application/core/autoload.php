@@ -10,6 +10,9 @@ function __autoload($className) {
 	elseif(in_array($className, array("DB","Model","ModelManager")))
 		include APP . "model/extends/$className.php";
 
+	elseif($className == "Seo")
+		include APP . "model/interfaces/$className.php";
+
 	else
     	include APP . "model/$className.php";
 }

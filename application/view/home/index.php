@@ -17,15 +17,26 @@
 			<nav class="col-xs-12">
 				<div class="btn-group" role="group" aria-label="...">
 					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".mix">Toutes</button>
-					<?php foreach($tags as $tag) { ?>
+					<?php $i=0; while(isset($tags[0]) && $i<5) { $tag=array_shift($tags); $i++; ?>
 						<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".<?php echo $tag->get('tag'); ?>"><?php echo ucfirst($tag->get('tag')); ?></button>
 					<?php } ?>
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<?php foreach($tags as $tag) { ?>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".<?php echo $tag->get('tag'); ?>"><?php echo ucfirst($tag->get('tag')); ?></a></li>
+							<?php } ?>
+						</ul>
+					</div>
 				</div>
 			</nav>
 
 			<?php if(isset($videos[0])) { ?>
 				<div class="col-md-8 col-xs-12 mix <?php echo $videos[0]->get('tags'); ?>" data-myorder="1" style="background-image: url('<?php echo $videos[0]->get('picture', 'large'); ?>');">
 					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $videos[0]->get('youtube'); ?>">
+						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="<?php echo URL . $videos[0]->get('permalink'); ?>" class="physicalLink"><i class="fa fa-external-link"></i></a>
 						<i class="fa fa-video-camera"></i>
 						<h2 class="videoTitle"><?php echo $videos[0]->get('title'); ?></h2>
 					</div>
@@ -36,6 +47,7 @@
 			<?php foreach($videos as $video) { ?>
 				<div class="col-md-4 col-xs-6 mix <?php echo $video->get('tags'); ?>" data-myorder="2" style="background-image: url('<?php echo $video->get('picture', 'medium'); ?>');">
 					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $video->get('youtube'); ?>">
+						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="<?php echo URL . $video->get('permalink'); ?>" class="physicalLink"><i class="fa fa-external-link"></i></a>
 						<i class="fa fa-video-camera"></i>
 						<h4 class="videoTitle"><?php echo $video->get('title'); ?></h4>
 					</div>
@@ -80,7 +92,24 @@
 						<iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+						<div class="col-xs-4">
+							<a class="facebook" href="#" title="Partager sur Facebook" target="_new" rel="nofollow" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(this.href,'sharer','toolbar=0,status=0,width=626,height=256,top='+sTop+',left='+sLeft);return false;">
+								<i class="fa fa-facebook fa-fw"></i>
+								Facebook
+							</a>
+						</div>
+						<div class="col-xs-4">
+							<a href="#" title="Partager sur Twitter" class="twitter" target="_new" rel="nofollow" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(this.href,'sharer','toolbar=0,status=0,width=626,height=256,top='+sTop+',left='+sLeft);return false;">
+								<i class="fa fa-twitter fa-fw"></i>
+								Twitter
+							</a>
+						</div>
+						<div class="col-xs-4">
+							<a href="#" title="Partager sur Google+" target="_blank" class="googleP" rel="nofollow" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(this.href,'sharer','toolbar=0,status=0,width=626,height=256,top='+sTop+',left='+sLeft);return false;">
+								<i class="fa fa-google-plus fa-fw"></i>
+								Google+
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

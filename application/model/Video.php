@@ -1,6 +1,6 @@
 <?php
 
-class Video extends Model
+class Video extends Model implements Seo
 {
 	public $id, $title, $tags, $youtube, $picture, $date;
 	
@@ -16,11 +16,21 @@ class Video extends Model
 		parent::__construct($tableColumns, $tableColumnsType, $pictureFormats);
 	}
 
+	public function initSeo($fbInit=false)
+	{
+		define('SEO_TITLE', $this->title);
+		define('SEO_CONTENT', "Cette vidéo nommée : '" . $this->title . "' est une vidéo réalisée par Loïc Wattez / Pixellart le " . $this->date);
+		define('SEO_KEYWORDS', $this->tags);
+		define('SEO_IMAGE', $this->get('picture', 'large'));
+	}
+
 	public function get($attr, $complt=null)
 	{
 		switch($attr){
             case 'id':
                 return isset($this->id) ? $this->id : $this->getNextId();
+            case 'permalink':
+                return 'video/' . $this->id . '/';
 			case 'youtube':
 				return empty($this->youtube) ? null : 'https://www.youtube.com/embed/' . $this->youtube;
 			case 'picture':

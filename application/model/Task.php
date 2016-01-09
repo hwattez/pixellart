@@ -19,7 +19,8 @@ class Task extends Model
     {
         $sql = "UPDATE " . parent::get('table') . " SET";
 
-        foreach(parent::get('tableColumns') as $key => &$val)
+        $tableColumns = parent::get('tableColumns');
+        foreach($tableColumns as $key => &$val)
             $sql .= " $key = :$key,";
 
         $sql = substr($sql,0,-1);
@@ -28,6 +29,6 @@ class Task extends Model
         
         $this->completed = !$this->completed;
 
-        return $query->execute(parent::get('tableColumns'));
+        return $query->execute($tableColumns);
     }
 }

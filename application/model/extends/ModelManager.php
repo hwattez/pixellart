@@ -13,10 +13,10 @@ abstract class ModelManager{
 		}
 	}
 
-	public static function getAll($order=null){
+	public static function getAll(array $options = array()){
 
 		$sql = "SELECT * FROM " . self::get('table');
-		$sql .= is_null($order) ? "" : " ORDER BY $order";
+		$sql .= isset($options['order']) ? " ORDER BY " . $options['order'] : "";
 		$query=DB::getInstance()->prepare($sql);
 		$query->execute();
 		$query->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, self::get('class'));

@@ -14,7 +14,7 @@
 										<th><?php echo $key; ?></th>
 									<?php } ?>
 									<th>Modifier</th>
-									<th>Complété</th>
+									<th>Complétée</th>
 								</tr>
 							</thead>
 							<tbody style="text-align: center;">
