@@ -35,7 +35,7 @@
 
 			<?php if(isset($videos[0])) { ?>
 				<div class="col-md-8 col-xs-12 mix <?php echo $videos[0]->get('tags'); ?>" data-myorder="1" style="background-image: url('<?php echo $videos[0]->get('picture', 'large'); ?>');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $videos[0]->get('youtube'); ?>">
+					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $videos[0]->get('youtube'); ?>" data-description="<?php echo $videos[0]->get('description'); ?>">
 						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="<?php echo URL . $videos[0]->get('permalink'); ?>" class="physicalLink"><i class="fa fa-external-link"></i></a>
 						<i class="fa fa-video-camera"></i>
 						<h2 class="videoTitle"><?php echo $videos[0]->get('title'); ?></h2>
@@ -46,7 +46,7 @@
 
 			<?php foreach($videos as $video) { ?>
 				<div class="col-md-4 col-xs-6 mix <?php echo $video->get('tags'); ?>" data-myorder="2" style="background-image: url('<?php echo $video->get('picture', 'medium'); ?>');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $video->get('youtube'); ?>">
+					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="<?php echo $video->get('youtube'); ?>" data-description="<?php echo $video->get('description'); ?>">
 						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="<?php echo URL . $video->get('permalink'); ?>" class="physicalLink"><i class="fa fa-external-link"></i></a>
 						<i class="fa fa-video-camera"></i>
 						<h4 class="videoTitle"><?php echo $video->get('title'); ?></h4>
@@ -92,6 +92,12 @@
 						<iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
 					</div>
 					<div class="modal-footer">
+						<div class="col-xs-12 divDescription">
+							<dl class="dl-horizontal">
+								<dt><h5>Description</h5></dt>
+								<dd class="description"></dd>
+							</dl>
+						</div>
 						<div class="col-xs-4">
 							<a class="facebook" href="#" title="Partager sur Facebook" target="_new" rel="nofollow" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(this.href,'sharer','toolbar=0,status=0,width=626,height=256,top='+sTop+',left='+sLeft);return false;">
 								<i class="fa fa-facebook fa-fw"></i>

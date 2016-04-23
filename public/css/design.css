@@ -237,6 +237,18 @@ header h3{
 	padding: 0;
 }
 
+#myModal .modal-footer .divDescription{
+	padding-top: 15px;
+}
+
+#myModal .modal-footer .divDescription h5{
+	margin: 4px;
+}
+
+#myModal .modal-footer .description{
+	text-align: left;
+}
+
 #myModal .modal-footer .col-xs-4, #video .col-xs-4{
 	text-align: center;
 	padding: 2px;
@@ -280,7 +292,18 @@ header h3{
 	width: 100%;
 }
 
+#video .divDescription{
+	padding-top: 15px;
+	color: white;
+}
 
+#video .divDescription h4{
+	margin: 0px;
+}
+
+#video .description{
+	text-align: left;
+}
 
 
 

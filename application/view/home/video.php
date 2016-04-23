@@ -9,6 +9,12 @@
 			</div>
 
 			<div class="row">
+				<div class="col-xs-12 divDescription">
+					<dl class="dl-horizontal">
+						<dt><h4>Description</h4></dt>
+						<dd class="description"><?php echo $video->get('description'); ?></dd>
+					</dl>
+				</div>
 				<div class="col-xs-4">
 					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo URL . $video->get('permalink'); ?>" title="Partager sur Facebook" target="_new" rel="nofollow" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(this.href,'sharer','toolbar=0,status=0,width=626,height=256,top='+sTop+',left='+sLeft);return false;">
 						<i class="fa fa-facebook fa-fw"></i>

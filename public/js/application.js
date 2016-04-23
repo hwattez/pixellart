@@ -44,11 +44,13 @@ function initialisation(){
 function modalUpdate(){
 
     var youtube = $(this).attr('data-youtube');
+    var description = $(this).attr('data-description');
     var title = $(this).children('.videoTitle').text();
     var url = $(this).children('a').attr('href');
 
     $('.embed-responsive-item').attr('src', youtube);
     $('.modal-title').text(title);
+    $('.modal-footer .description').text(description);
     $('.modal-footer .facebook').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + url);
     $('.modal-footer .twitter').attr('href', 'http://twitter.com/home?status=' + title + ' ' + url + ' @WattezL');
     $('.modal-footer .googleP').attr('href', 'https://plus.google.com/share?url=' + url);

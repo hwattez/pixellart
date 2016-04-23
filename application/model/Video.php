@@ -2,13 +2,13 @@
 
 class Video extends Model implements Seo
 {
-	public $id, $title, $tags, $youtube, $picture, $date;
+	public $id, $title, $description, $tags, $youtube, $picture, $date;
 	
 	public function __construct() 
 	{
 		// On renseigne au constructeur parent les attributs de la classe et le typage des colonnes dans le même ordre que les attributs
 		$tableColumns = get_object_vars($this);
-		$tableColumnsType = array('number','text','text','text','input','date');
+		$tableColumnsType = array('number','text','textarea','text','text','input','date');
 		$pictureFormats = array( 
 		    array('suffix' => 'large', 'width' => '725', 'height' => '', 'quality' => 100, 'watermark' => '', 'verifSize' => false),
 		    array('suffix' => 'medium', 'width' => '360', 'height' => '', 'quality' => 100, 'watermark' => '', 'verifSize' => false)
@@ -19,7 +19,7 @@ class Video extends Model implements Seo
 	public function initSeo($fbInit=false)
 	{
 		define('SEO_TITLE', $this->title);
-		define('SEO_CONTENT', "Cette vidéo nommée : '" . $this->title . "' est une vidéo réalisée par Loïc Wattez / Pixellart le " . $this->date);
+		define('SEO_CONTENT', $this->description != "" ? $this->description : "Cette vidéo nommée : '" . $this->title . "' est une vidéo réalisée par Loïc Wattez / Pixellart le " . $this->date);
 		define('SEO_KEYWORDS', $this->tags);
 		define('SEO_IMAGE', $this->get('picture', 'large'));
 	}
