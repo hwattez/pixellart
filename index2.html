@@ -122,7 +122,7 @@ Au plus près de l'action et mes 5 sens en ébullition, je peux encore sentir le
 			</div> -->
 
 			{% for video in site.data.videos %}
-				<div class="col-md-4 col-xs-6 mix {{ video.tags }}" data-myorder="2" style="background-image: url('img/videos/{{ video.id }}.jpg');">
+				<div class="col-md-4 col-xs-6 mix{% for tag in video.tags %} {{ tag }}{% endfor %}" data-myorder="2" style="background-image: url('img/videos/{{ video.id }}.jpg');">
 					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="{{ video.youtube }}" data-description="{{ video.description }}">
 						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/{{ video.id }}.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
 						<i class="fa fa-video-camera"></i>
