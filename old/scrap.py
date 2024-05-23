@@ -11,15 +11,18 @@ data = []
 with open(path) as f:
     html = f.read()
     soup = BeautifulSoup(html)
+    curr_id = 1
 
     for div in soup.select(".mix"):
         info_video = div.select('.infoVideo')[0]
-        id = div.select('a')[0].attrs['href'].split('/')[1]
-        img_to_move = glob.glob(f'img/videos/{id}/*.jpg')[0]
-        shutil.copyfile(img_to_move, f'img/videos/{id}.jpg')
+        old_id = div.select('a')[0].attrs['href'].split('/')[1]
+        new_id = curr_id
+        curr_id += 1
+        img_to_move = glob.glob(f'img/videos/{old_id}/*.jpg')[0]
+        shutil.copyfile(img_to_move, f'img/videos/{new_id}.jpg')
 
         data.append({
-            'id': id,
+            'id': new_id,
             'title': div.select('.videoTitle')[0].text,
             'description': info_video.attrs['data-description'],
             'youtube': info_video.attrs['data-youtube'],

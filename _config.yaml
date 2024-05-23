@@ -1,4 +1,0 @@
-plugins:
-  - jekyll-paginate
-paginate: 1
-paginate_path: "/videos/video:num/"

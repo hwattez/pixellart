@@ -1,9 +1,12 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
 
-        <title>PixellArt - Loïc Wattez</title>
+        <title>{{ site.data.main.page_title }}</title>
 
         <!-- Meta Description -->
         
@@ -36,7 +39,7 @@
     <body class="col-xs-offset-2">
     
         <div id="sidebar" class="col-xs-2">
-            <h1><span class="hidden-xs hidden-sm">PixellArt</span><span class="visible-xs visible-sm">P'A</span></h1>
+            <h1><span class="hidden-xs hidden-sm">{{ site.data.main.pixellart }}</span><span class="visible-xs visible-sm">{{ site.data.main.small_pixellart }}</span></h1>
             <ul id="menu_sidebar" class="nav nav-pills nav-stacked">
                 <li class="active"><a href="index.html#"><i class="fa fa-home fa-fw"></i> <span class="hidden-xs">Accueil</span></a></li>
                 <li><a href="index.html#videos"><i class="fa fa-video-camera fa-fw"></i> <span class="hidden-xs">Vidéos</span></a></li>
@@ -53,9 +56,10 @@
                 <li class="textAlignCenter"><a target="_blank" class="googleP" href="https://plus.google.com/u/0/114178251131214211570/posts"><i class="fa fa-google-plus fa-fw"></i></a></li>
                 <li class="textAlignCenter"><a target="_blank" class="youtube" href="https://www.youtube.com/channel/UCFabwJ1_1dWVDSzWoiAgnJQ"><i class="fa fa-youtube fa-fw"></i></a></li>
             </ul>
-        </div>		<header class="row minHeightScreen">
+        </div>		
+		<header class="row minHeightScreen">
 			<div class="col-xs-12">
-				<h1>PixellArt</h1>
+				<h1>{{ site.data.main.pixellart }}</h1>
 			</div>
 			<div class="col-xs-12">
 				<h2 class="pull-right"><small>by</small> Loïc Wattez</h2>
@@ -64,11 +68,11 @@
 				<hr>
 			</div>
 			<div class="col-xs-12">
-				<h3>Memories for Eternity</h3>
+				<h3>{{ site.data.main.slogan }}</h3>
 			</div>
 			<div class="col-xs-offset-3 col-xs-6">
 				<div style="min-height: 300px; margin: 20px 0px;" class="modal-body embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xS81AyrVWfs?rel=0&amp;controls=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+					<iframe class="embed-responsive-item" src="{{ site.data.main.main_video }}?rel=0&amp;controls=0&autoplay={{ site.data.main.autoplay_main_video }}" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</header>
@@ -77,521 +81,64 @@
 			<nav class="col-xs-12">
 				<div class="btn-group" role="group" aria-label="...">
 					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".mix">Toutes</button>
-											<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".Inde">Inde</button>
-											<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".danse">Danse</button>
-											<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".Bharatanatyam">Bharatanatyam</button>
-											<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".animation">Animation</button>
-											<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".mariage">Mariage</button>
-										<div class="btn-group" role="group">
+					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".Inde">Inde</button>
+					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".danse">Danse</button>
+					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".Bharatanatyam">Bharatanatyam</button>
+					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".animation">Animation</button>
+					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".mariage">Mariage</button>
+					<div class="btn-group" role="group">
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Robin">Robin</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".australie">Australie</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".musique">Musique</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".cheval">Cheval</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".clap">Clap</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Arras">Arras</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".theatre">Theatre</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".india">India</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Arménie">Arménie</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Cafe">Cafe</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".velo">Velo</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Recital">Recital</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".LITUANIE">LITUANIE</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Fun">Fun</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".chien">Chien</a></li>
-															<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Boulangerie">Boulangerie</a></li>
-													</ul>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Robin">Robin</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".australie">Australie</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".musique">Musique</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".cheval">Cheval</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".clap">Clap</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Arras">Arras</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".theatre">Theatre</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".india">India</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Arménie">Arménie</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Cafe">Cafe</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".velo">Velo</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Recital">Recital</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".LITUANIE">LITUANIE</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Fun">Fun</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".chien">Chien</a></li>
+								<li><a class="btn filter" data-sort="myorder:asc" data-filter=".Boulangerie">Boulangerie</a></li>
+						</ul>
 					</div>
 				</div>
 			</nav>
 
-							<div class="col-md-8 col-xs-12 mix " data-myorder="1" style="background-image: url('img/videos/68/picture_large.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/TFI6dQ5Of28" data-description="Il y a deux ans, j'allais filmer l'une des performances les plus impressionnantes, qu'il m'ait été donné de découvrir. 
+			<!-- <div class="col-md-8 col-xs-12 mix " data-myorder="1" style="background-image: url('img/videos/68/picture_large.jpg');">
+				<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/TFI6dQ5Of28" data-description="Il y a deux ans, j'allais filmer l'une des performances les plus impressionnantes, qu'il m'ait été donné de découvrir. 
 Au plus près de l'action et mes 5 sens en ébullition, je peux encore sentir les vapeurs produites par les flammes. Le front en sueur et les yeux sur mon écran, je rencontre l'exceptionnel...">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/68/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h2 class="videoTitle">FIRE PERFORMANCE</h2>
-					</div>
+					<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/68/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
+					<i class="fa fa-video-camera"></i>
+					<h2 class="videoTitle">FIRE PERFORMANCE</h2>
 				</div>
-							
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/67/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/g1ak4gOvfAU" data-description="Festival rural des Hauts-de-France avec la participation des artistes David Cranf, Erik Skar Baroux, Guilhem Valayé, Placide, les R.P.C., Franck Carducci and the fantastic squad, Miss Enko, Jug, The Ludes, Atlas Karma, Soho Riot, Reaven et Jacky notre présentateur.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/67/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">FESTIVAL ARTSWORLD</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/66/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/gRZqap-i1ko" data-description="Samedi 4 mars 2023, l'association &quot;Projets Phoenix&quot; organisait la deuxième journée du Championnat National de Quidditch (D1) de la Fédération du Quidditch Français à Arras! Avec les Black Snitches de Lille et les joueurs.ses du Toulouse Quidditch à l'image.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/66/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Championnat National de Quidditch 2023</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/63/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/naQmOpNN9PQ" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/63/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">GAG REEL LIFEWORKS</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/64/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/EA2ypglZt8Y" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/64/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">LIFEWORKS : Employee Assistance Program</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/65/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/S8qMF5EoYR4" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/65/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">DEER PARK : Early Learning &amp; Kindergarten</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/62/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/SgW_4CjRifs" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/62/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Early Childhood Educators Day 2022 Australia</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/61/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/6oS6HjVTBxI" data-description="Près de soixante années se sont écoulées depuis que 80 000 tibétains ont fui leur pays, au côté de leur chef spirituel le Dalaï-Lama.
-Désormais, l'identité tibétaine survit au sein d'une communauté majoritairement expatriée en Inde. 
-Entre le souvenir d'un passé perdu et la construction d'un avenir incertain, trois générations témoignent.
+			</div> -->
 
-Almost sixty years have passed since 80,000 Tibetans fled their country, with their spiritual leader the Dalai Lama.
-Today, the Tibetan identity survives within a community mainly expatriated in India. 
-Between the memory of a lost home and the construction of an uncertain future, three generations testify.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/61/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
+			{% for video in site.data.videos %}
+				<div class="col-md-4 col-xs-6 mix{% for tag in video.tags %} {{ tag }}{% endfor %}" data-myorder="2" style="background-image: url('img/videos/{{ video.id }}.jpg');">
+					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="{{ video.youtube }}" data-description="{{ video.description }}">
+						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/{{ video.id }}.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
 						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">SWARAJ : Un Pas vers l'Indépendance</h4>
+						<h4 class="videoTitle">{{ video.title }}</h4>
 					</div>
 				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/59/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/hK-Qm0Io2zc" data-description="Spectacle Laser et Pyrotechnie">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/59/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">PYROLIGHT</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/58/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/8HHvwOVGGvg" data-description="Directement dans le top 5 des vidéos 2020!
-Sur place la mer, ses reflets, ses contre-jours (et ses mouettes) dessinent instantanément un cadre idéal. Alors le montage démarre. C'est finalement l'accompagnement musical, choisi par les futurs mariés, qui dépose cette signature. Ses chœurs et ses notes de jazz parfois électriques cristallisent les moments partagés.
-Savourez cette séquence à sa juste valeur: son authenticité.
-
-Directly on my Top 5 videos of 2020!
-On stage is the sea, her reflections, her backlightings (and her seagulls) drawing instantly an ideal portrait. So let's start the editing. It's finally the musical support, chosen by the future bride and groom, that becomes the signature. The chorus  and the jazzy notes sometimes electric, cristallise the shared moments.
-Relish this sequence in a realistic manner: its autenticity.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/58/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">GLOREX ALWAYS</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix cheval" data-myorder="2" style="background-image: url('img/videos/57/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/hiP0HTCHjyM" data-description="Tombée amoureux des chevaux toute petite, Marine nous ouvre les portes de son établissement. Avec la participation exceptionnelle de Cali, Emris et Hélie...">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/57/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">LES ECURIES DE BASSEUX</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix australie" data-myorder="2" style="background-image: url('img/videos/55/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/Ax1aX3M_WuM" data-description="Watch as kids learn about science and living by taking care of worm farms, growing vegetables and herbs, composting waste and cooking delicious meals at the Monash Vale Early Learning Centre. Hear educators talk about their experience and passion in helping kids grow to become more responsible human beings.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/55/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">THE GARDENING PROJECT: Nurturing through Nature</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/54/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/xS81AyrVWfs" data-description="Teaser">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/54/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Pixellart : Ne vous laissez pas prendre de vitesse</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/53/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/0qq465h_fzo" data-description="Thalassaemia and Sickle Cell Australia or better known as TASCA, offers both individuals and communities with a supportive, education driven and advocacy network. Founded in 1976 by clinicians, TASCA is now spearheaded by the passion of those who have, and have had close contact with Haemoglobinopathies. TASCA invites you to join the conversation around understanding more about blood disorders and breaking the stigma that continues to pose a challenge to communities.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/53/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Thalassaemia And Sickle Cell Australia (TASCA)</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix australie" data-myorder="2" style="background-image: url('img/videos/52/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/fJTY_2q7J6Q" data-description="The children of Bridge Road Early Learning Center go bushwalking with their educators to learn more about their environnement and how to preserve it. Playing in nature helps children and adults to develop skills that they wouldn't be able to within the four walls of a classroom.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/52/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">KINDER-BUSH NATURE PLAY</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix australie" data-myorder="2" style="background-image: url('img/videos/51/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/tg42AKlmUpk" data-description="It's been 25 years since the Monash Vale Early Learning Centre was born. Come have a look at their journey and the wonderful world they've created for numerous young children of Clayton, Victoria and their families...">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/51/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">MONASH VALE : Early Learning Center</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix mariage" data-myorder="2" style="background-image: url('img/videos/50/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/UFmOk5t02_Q" data-description="&quot;Un peu stressé mais surtout pressé...&quot; Hélène et Antoine se sont dit Oui. Leur documentaire de mariage, c'est au final un film de 52 minutes.
-Tout d'abord, une après-midi qui vient révéler une passion et quelques secrets. De la préparation des mariés jusqu'au 12 coups de minuit, c'est aussi l'interview des invités qui rythment la journée entre deux prises en apesanteur.
-
-Plus que de belles images, laissez-vous plonger dans leur histoire...">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/50/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">MARIAGE HELENE et ANTOINE : 4 Mai 2019</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix mariage" data-myorder="2" style="background-image: url('img/videos/49/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/4R8-Y49Vx28" data-description="L'union entre deux personnes ne se résume pas seulement avec de belles images. C'est aussi une histoire qui se laisse raconter au fil des mots...">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/49/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">MARIAGE MELANIE et GAUTHIER : 27 Avril 2019</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix clap" data-myorder="2" style="background-image: url('img/videos/48/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/JbL1nqkuSn0" data-description="Chaque année, l'association Clap a la chance d'accompagner un groupe d'enfants dans la réalisation d'un court métrage.
-A la fois acteurs et réalisateurs, les jeunes vidéastes écrivent, tournent et montent leur projet.
-L' Apel62 aura marqué notre partenariat 2019!">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/48/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Concours Vidéo</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix clap" data-myorder="2" style="background-image: url('img/videos/47/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/URaNBN16xf8" data-description="Découvrez les coulisses de tournage d'un teaser vidéo made in Clap!">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/47/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bétisier</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix animation" data-myorder="2" style="background-image: url('img/videos/46/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/BPU5Gy1cdPY" data-description="Venez découvrir l'horlogerie médiévale présentée lors du Salon International du Patrimoine Culturel au Carroussel du Louvre à Paris.
-Avec l'aimable participation de María Ardavín.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/46/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">L' Horlogerie Médiévale</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix animation" data-myorder="2" style="background-image: url('img/videos/45/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/AeVl_A70qsc" data-description="L'association CLAP (cinéma local amateur production) vous présente la 9e édition du marché de Noël de Neuville Vitasse. Les Artisans locaux vous présentent leur savoir faire, face caméra.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/45/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Noël à Neuville</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix theatre" data-myorder="2" style="background-image: url('img/videos/44/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/AJHxWLlwso8" data-description="Le plus grand festival de théâtre du monde ouvre ses portes chaque année dans l'ancienne cité des papes, Avignon.
-Découvrez la parade des artistes, le premier jour d'ouverture.">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/44/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">THEATRE FESTIVAL AVIGNON</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix musique" data-myorder="2" style="background-image: url('img/videos/43/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/q2iaXY5Fhdc" data-description="Bienvenue à la Fête de la musique 2017 de Neuville Vitasse !">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/43/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">BIM !</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix LITUANIE" data-myorder="2" style="background-image: url('img/videos/56/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/pTSZ7ZAVDPg" data-description="MOSCOU, 1938, LE VOL D'UN BLOC DE LEVURE TOURNE VINAIGRE...
-Si tu es pressé c'est directement à 7 minutes et 26 secondes.
-Sinon tu peux aussi te poser tranquillement et découvrir ma dernière aventure à Vilnius!!! Comme d'habitude, il y a de quoi à saliver tout en découvrant l'histoire d'un territoire, 
-indépendant depuis seulement 1991.
-Branche ton casque!">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/56/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">ESCALE EN LITUANIE: Documentaire Audio</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/60/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/vaGyvWTvQhk" data-description="It's the time for new beginnings and an opportunity to create new memories. Hop onboard the Pixellart Express!">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/60/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">PIXELLART TEASER</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/42/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/m7XV9S1hbX8" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/42/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Guenatsink</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/40/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/l8062cy_JSM" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/40/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">3, 2, 1...Mise à Feu !</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/39/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/DoCeR68aDPE" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/39/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">La Culture s'Amuse</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/38/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/dVaYgkcBU9Q" data-description="Namasté Sciences Po India est une association étudiante à Sciences Po Paris. Elle vise à réunir des étudiants et des professionnels pour mieux connaître l'Inde. La chorégraphie présentée, révèle l'esprit unique de l'Inde!
-Namasté Sciences Po India is a students' association at Sciences Po Paris. The association aims to bring together students and professionals to get to know India better. This is a dance event organized by Namasté Sciences Po to celebrate the spirit of India!">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/38/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Namasté SciencesPo.</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/37/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/FgF5ykZZw7w" data-description="coucou">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/37/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Aurore d'Hiver</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/36/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/m8B0pej-RL0" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/36/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Thyagaraja Aradhana</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/35/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/t8MIADttjXY" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/35/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Let The Music Play</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix india" data-myorder="2" style="background-image: url('img/videos/34/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/b0arfQsLErw" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/34/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Anushree &amp; Salil</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix " data-myorder="2" style="background-image: url('img/videos/33/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/OJN9u7c-Q8U" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/33/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Pixell'Art : Memories for Eternity</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Bharatanatyam danse inde" data-myorder="2" style="background-image: url('img/videos/31/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/YGdOnKHo3Mo" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/31/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bharatanatyam Recital - Bharatanatyam Paradiso - Part 7/7</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix danse bharatanatyam inde" data-myorder="2" style="background-image: url('img/videos/30/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/11OBZBE4V9Q" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/30/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bharatanatyam Recital - Final Show - Part 6/7</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix danse bharatanatyam inde" data-myorder="2" style="background-image: url('img/videos/29/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/JmKK4AWDlDA" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/29/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bharatanatyam Recital - 8 Steps before the Leap - Part 5/7</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Bharatanatyam danse inde" data-myorder="2" style="background-image: url('img/videos/28/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/AFYLXVBbeak" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/28/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bharatanatyam Recital - Introducing to You... - Part 4/7</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Bharatanatyam danse inde" data-myorder="2" style="background-image: url('img/videos/27/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/OnWgwTsbUic" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/27/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bharatanatyam Recital - Transformation - Part 3/7</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Bharatanatyam danse inde" data-myorder="2" style="background-image: url('img/videos/26/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/2_UmJU4y43A" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/26/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bharatanatyam Recital - Glimpse into the sweat &amp; tears (2) - Part 2/7</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Bharatanatyam danse inde" data-myorder="2" style="background-image: url('img/videos/25/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/7jl6tv3yk-g" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/25/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Bharatanatyam - Glimpse into the sweat &amp; tears - Part 1/7</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Mariage" data-myorder="2" style="background-image: url('img/videos/23/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/-JgMpY4FB7s" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/23/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Edward &amp; Cécile</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix inde" data-myorder="2" style="background-image: url('img/videos/24/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/hiRwmR4ZlbI" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/24/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">A While Ago in a Distant Place</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix animation" data-myorder="2" style="background-image: url('img/videos/22/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/PXcehWZBuAo" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/22/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Halloween Carnaval</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Inde" data-myorder="2" style="background-image: url('img/videos/21/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/Kq0_OruvtLs" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/21/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Standard Bakers and Fast Food</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix cheval" data-myorder="2" style="background-image: url('img/videos/3/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/4wqCfwxS1RY" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/3/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">-RodEo MoviE-</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Fun" data-myorder="2" style="background-image: url('img/videos/4/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/-mNAcqRDRpw" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/4/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Merci !!!</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix velo" data-myorder="2" style="background-image: url('img/videos/5/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/rUbCYZBWYUA" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/5/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Tour de France - GUEMAPPE</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix musique animation" data-myorder="2" style="background-image: url('img/videos/1/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/LH2ErCG20pk" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/1/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Musique en Fête</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix danse" data-myorder="2" style="background-image: url('img/videos/2/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/4ciQkzyjmFY" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/2/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Les danseuses des bonnettes &quot;Pas à Pas&quot;</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Boulangerie" data-myorder="2" style="background-image: url('img/videos/6/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/quXnr1RqhDA" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/6/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">La Main à la Pâte</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Arménie" data-myorder="2" style="background-image: url('img/videos/13/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/J-ddnaFcPLA" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/13/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Pari Louïs Arménie !</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix animation" data-myorder="2" style="background-image: url('img/videos/8/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/Y0acJwPDun8" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/8/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Journée de la FEMME 2015 - ARRAS</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Arras" data-myorder="2" style="background-image: url('img/videos/14/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/gOcYG_cMweI" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/14/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Across the light</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Inde" data-myorder="2" style="background-image: url('img/videos/18/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/g4lGskeep3s" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/18/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Dilwale dulhaniya le jayeingey</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix mariage" data-myorder="2" style="background-image: url('img/videos/9/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/y1Vawd0n8O8" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/9/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Salon du Mariage 2015</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix chien" data-myorder="2" style="background-image: url('img/videos/7/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/whEzuoSLFeE" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/7/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Divali</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Cafe Inde" data-myorder="2" style="background-image: url('img/videos/16/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/BNZSWT4djjs" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/16/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Cafe Cibo</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Inde" data-myorder="2" style="background-image: url('img/videos/15/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/rbFkJSjVv6Q" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/15/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Saundarya Lahiri</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Robin Hood" data-myorder="2" style="background-image: url('img/videos/10/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/Ln3dqaw7ZZc" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/10/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Robin Hood teaser</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Robin Hood" data-myorder="2" style="background-image: url('img/videos/11/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/WGYoTd3VBgc" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/11/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Robin Hood teaser (2)</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix Robin Hood" data-myorder="2" style="background-image: url('img/videos/12/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/HxteAez3hqc" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/12/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Robin Hood Show</h4>
-					</div>
-				</div>
-							<div class="col-md-4 col-xs-6 mix animation" data-myorder="2" style="background-image: url('img/videos/20/picture_medium.jpg');">
-					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/l0q75Y8yvGk" data-description="">
-						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/20/index.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
-						<i class="fa fa-video-camera"></i>
-						<h4 class="videoTitle">Feux de la Saint Jean - RIVIERE</h4>
-					</div>
-				</div>
-			
-
+			{% endfor %}
+					
 		</div>
 		
 		<div id="contact" class="row minHeightScreen">
 			<div id="contact_title" class="col-xs-12" style="text-align: center;">
 				<h2>Contactez-moi</h2>
-				<h3>Prestation, information, question...</h3>
-			        <a href="mailto:l.wattez@hotmail.fr" class="btn btn-primary"><i class="fa fa-paper-plane fa-fw" style="margin-right: 10px;"></i>l.wattez@hotmail.fr</a>
-                        </div>
+				<h3>{{ site.data.main.contact_sentence }}</h3>
+			    <a href="mailto:{{ site.data.main.mail }}" class="btn btn-primary"><i class="fa fa-paper-plane fa-fw" style="margin-right: 10px;"></i>{{ site.data.main.mail }}</a>
+            </div>
 			<!--<div id="map" class="col-xs-12">
 				<div class="embed-responsive embed-responsive-16by9">
 				
@@ -649,27 +196,29 @@ Namasté Sciences Po India is a students' association at Sciences Po Paris. The 
 					</div>
 				</div>
 			</div>
-		</div>	        	<!-- Facebook -->
-                <div id="fb-root"></div>
-                <script src="js/fb.js"></script>
+		</div>	        	
+		
+		<!-- Facebook -->
+		<div id="fb-root"></div>
+		<script src="js/fb.js"></script>
 
-                <!-- jQuery -->
-                <script src="addons/jquery/dist/jquery.min.js"></script>
-                
-                <!-- Bootstrap -->
-                <script src="addons/bootstrap/dist/js/bootstrap.min.js"></script>
-                
-                <!-- Google Map -->
-                <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
-                
-                <!-- Mixitup -->
-                <script src="addons/mixitup/src/jquery.mixitup.js"></script>
+		<!-- jQuery -->
+		<script src="addons/jquery/dist/jquery.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<script src="addons/bootstrap/dist/js/bootstrap.min.js"></script>
+		
+		<!-- Google Map -->
+		<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+		
+		<!-- Mixitup -->
+		<script src="addons/mixitup/src/jquery.mixitup.js"></script>
 
-                <!-- SweetAlert -->
-                <script src="addons/sweetalert/sweetalert.min.js"></script>
+		<!-- SweetAlert -->
+		<script src="addons/sweetalert/sweetalert.min.js"></script>
 
-                <!-- MyJS -->
-                <script src="js/application.js"></script>
+		<!-- MyJS -->
+		<script src="js/application.js"></script>
 	
 	</body>
 </html>	
