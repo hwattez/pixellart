@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>PixellArt - Loïc Wattez</title>
+        <title>{{ main.page_title }}</title>
 
         <!-- Meta Description -->
         
@@ -39,7 +39,7 @@
     <body class="col-xs-offset-2">
     
         <div id="sidebar" class="col-xs-2">
-            <h1><span class="hidden-xs hidden-sm">PixellArt</span><span class="visible-xs visible-sm">P'A</span></h1>
+            <h1><span class="hidden-xs hidden-sm">{{ main.pixellart }}</span><span class="visible-xs visible-sm">{{ main.small_pixellart }}</span></h1>
             <ul id="menu_sidebar" class="nav nav-pills nav-stacked">
                 <li class="active"><a href="index.html#"><i class="fa fa-home fa-fw"></i> <span class="hidden-xs">Accueil</span></a></li>
                 <li><a href="index.html#videos"><i class="fa fa-video-camera fa-fw"></i> <span class="hidden-xs">Vidéos</span></a></li>
@@ -59,7 +59,7 @@
         </div>		
 		<header class="row minHeightScreen">
 			<div class="col-xs-12">
-				<h1>PixellArt</h1>
+				<h1>{{ main.pixellart }}</h1>
 			</div>
 			<div class="col-xs-12">
 				<h2 class="pull-right"><small>by</small> Loïc Wattez</h2>
@@ -68,11 +68,11 @@
 				<hr>
 			</div>
 			<div class="col-xs-12">
-				<h3>Memories for Eternity</h3>
+				<h3>{{ main.slogan }}</h3>
 			</div>
 			<div class="col-xs-offset-3 col-xs-6">
 				<div style="min-height: 300px; margin: 20px 0px;" class="modal-body embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xS81AyrVWfs?rel=0&amp;controls=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+					<iframe class="embed-responsive-item" src="{{ main.main_video }}?rel=0&amp;controls=0&autoplay={{ main.autoplay_main_video }}" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</header>
@@ -136,8 +136,8 @@ Au plus près de l'action et mes 5 sens en ébullition, je peux encore sentir le
 		<div id="contact" class="row minHeightScreen">
 			<div id="contact_title" class="col-xs-12" style="text-align: center;">
 				<h2>Contactez-moi</h2>
-				<h3>Prestation, information, question...</h3>
-			    <a href="mailto:l.wattez@hotmail.fr" class="btn btn-primary"><i class="fa fa-paper-plane fa-fw" style="margin-right: 10px;"></i>l.wattez@hotmail.fr</a>
+				<h3>{{ main.contact_sentence }}</h3>
+			    <a href="mailto:{{ main.mail }}" class="btn btn-primary"><i class="fa fa-paper-plane fa-fw" style="margin-right: 10px;"></i>{{ main.mail }}</a>
             </div>
 			<!--<div id="map" class="col-xs-12">
 				<div class="embed-responsive embed-responsive-16by9">
