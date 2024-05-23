@@ -1,2 +1,4 @@
-title: "Mon site Jekyll"
-description: "Ce site est généré avec Jekyll et hébergé sur GitHub Pages."
+plugins:
+  - jekyll-paginate
+paginate: 1
+paginate_path: "/videos/video:num/"
