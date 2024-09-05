@@ -78,7 +78,7 @@
 		</header>
 		
 		<div id="videos" class="row minHeightScreen">
-			<nav class="col-xs-12">
+			<!-- <nav class="col-xs-12">
 				<div class="btn-group" role="group" aria-label="...">
 					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".mix">Toutes</button>
 					<button type="button" class="btn filter" data-sort="myorder:asc" data-filter=".Inde">Inde</button>
@@ -110,7 +110,7 @@
 						</ul>
 					</div>
 				</div>
-			</nav>
+			</nav> -->
 
 			<!-- <div class="col-md-8 col-xs-12 mix " data-myorder="1" style="background-image: url('img/videos/68/picture_large.jpg');">
 				<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="https://www.youtube.com/embed/TFI6dQ5Of28" data-description="Il y a deux ans, j'allais filmer l'une des performances les plus impressionnantes, qu'il m'ait été donné de découvrir. 
@@ -121,7 +121,7 @@ Au plus près de l'action et mes 5 sens en ébullition, je peux encore sentir le
 				</div>
 			</div> -->
 
-			{% for video in site.data.videos reversed %}
+			<!-- {% for video in site.data.videos reversed %}
 				<div class="col-md-4 col-xs-6 mix{% for tag in video.tags %} {{ tag }}{% endfor %}" data-myorder="2" style="background-image: url('img/videos/{{ video.id }}.jpg');">
 					<div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="{{ video.youtube }}" data-description="{{ video.description }}">
 						<a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="video/{{ video.id }}.html" class="physicalLink"><i class="fa fa-external-link"></i></a>
@@ -129,7 +129,7 @@ Au plus près de l'action et mes 5 sens en ébullition, je peux encore sentir le
 						<h4 class="videoTitle">{{ video.title }}</h4>
 					</div>
 				</div>
-			{% endfor %}
+			{% endfor %} -->
 					
 		</div>
 		
@@ -198,6 +198,9 @@ Au plus près de l'action et mes 5 sens en ébullition, je peux encore sentir le
 			</div>
 		</div>	        	
 		
+		<!-- Local Script for Videos -->
+		<script src="script.js"></script>
+
 		<!-- Facebook -->
 		<div id="fb-root"></div>
 		<script src="js/fb.js"></script>
