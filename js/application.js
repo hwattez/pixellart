@@ -8,7 +8,7 @@ $(function()
 });
 
 // Remplace ces valeurs par les tiennes
-const API_KEY = 'AIzaSyBMtXaOnbCYoM7mdcEoumLBf5gGVAyZ528';
+const API_KEY = 'AIzaSyCzu6rSglLLbDqqxf2fGo6t4GumUsRaud8';
 const CHANNEL_ID = 'UCFabwJ1_1dWVDSzWoiAgnJQ';
 const MAX_RESULTS = 1000; // Nombre de vidéos à afficher
 
