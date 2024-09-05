@@ -35,7 +35,7 @@ fetch(API_URL)
 
             videoDiv.innerHTML = `
                 <div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="${videoId}" data-description="${videoDescription}" onclick="modalUpdate(this)">
-                    <a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="https://www.youtube.com/watch?v=${videoId}" class="physicalLink"><i class="fa fa-external-link"></i></a>
+                    <a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="physicalLink"><i class="fa fa-external-link"></i></a>
                     <i class="fa fa-video-camera"></i>
                     <h4 class="videoTitle">${videoTitle}</h4>
                 </div>
