@@ -28,6 +28,10 @@ fetch(API_URL)
             const thumbnailMedium = thumbnails.medium.url;   // 320x180 px
             const thumbnailHigh = thumbnails.high.url;       // 480x360 px
 
+            if (videoTitle.includes('#')) {
+                return;
+            }
+
             // Créer l'élément vidéo
             const videoDiv = document.createElement('div');
             videoDiv.classList.add('col-md-4', 'col-xs-6');
