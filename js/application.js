@@ -28,7 +28,7 @@ fetch(API_URL)
             const thumbnailMedium = thumbnails.medium.url;   // 320x180 px
             const thumbnailHigh = thumbnails.high.url;       // 480x360 px
 
-            if (videoTitle.includes('#')) {
+            if (videoTitle.includes(' #')) {
                 return;
             }
 
