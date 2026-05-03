@@ -10,45 +10,108 @@ $(function()
 // Remplace ces valeurs par les tiennes
 const API_KEY = 'AIzaSyCzu6rSglLLbDqqxf2fGo6t4GumUsRaud8';
 const CHANNEL_ID = 'UCFabwJ1_1dWVDSzWoiAgnJQ';
-const MAX_RESULTS = 1000; // Nombre de vidéos à afficher
+const MAX_RESULTS = 50; // Maximum autorisé par l'API YouTube Search
 
 // URL de l'API YouTube Data
 const API_URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=${MAX_RESULTS}`;
 
-fetch(API_URL)
-    .then(response => response.json())
-    .then(data => {
+function getLoadingStatusElement() {
+    let statusElement = document.getElementById('videosLoadingStatus');
+
+    if (!statusElement) {
+        statusElement = document.createElement('div');
+        statusElement.id = 'videosLoadingStatus';
+        statusElement.className = 'col-xs-12';
+        statusElement.style.cssText = 'padding:20px 0;text-align:center;color:#fff;font-size:16px;letter-spacing:.04em;';
+
         const videoContainer = document.getElementById('videos');
-        data.items.forEach(item => {
-            const videoId = item.id.videoId;
-            const videoTitle = item.snippet.title;
-            const videoDescription = item.snippet.description;
-            const thumbnails = item.snippet.thumbnails;
-            const thumbnailDefault = thumbnails.default.url; // 120x90 px
-            const thumbnailMedium = thumbnails.medium.url;   // 320x180 px
-            const thumbnailHigh = thumbnails.high.url;       // 480x360 px
+        if (videoContainer && videoContainer.parentNode) {
+            videoContainer.parentNode.insertBefore(statusElement, videoContainer);
+        }
+    }
 
-            if (videoTitle.includes(' #')) {
-                return;
-            }
+    return statusElement;
+}
 
-            // Créer l'élément vidéo
-            const videoDiv = document.createElement('div');
-            videoDiv.classList.add('col-md-4', 'col-xs-6');
-            videoDiv.style.backgroundImage = `url(${thumbnailHigh})`;
+function updateLoadingStatus(loadedCount, expectedCount) {
+    const statusElement = getLoadingStatusElement();
+    if (!statusElement) {
+        return;
+    }
 
-            videoDiv.innerHTML = `
-                <div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="${videoId}" data-description="${videoDescription}" onclick="modalUpdate(this)">
-                    <a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="physicalLink"><i class="fa fa-external-link"></i></a>
-                    <i class="fa fa-video-camera"></i>
-                    <h4 class="videoTitle">${videoTitle}</h4>
-                </div>
-            `;
+    statusElement.textContent = expectedCount
+        ? `Chargement des vidéos... ${loadedCount} / ${expectedCount}`
+        : `Chargement des vidéos... ${loadedCount}`;
+}
 
-            // Ajouter la vidéo au conteneur
-            videoContainer.appendChild(videoDiv);
-        });
-    })
+function hideLoadingStatus() {
+    const statusElement = document.getElementById('videosLoadingStatus');
+    if (statusElement && statusElement.parentNode) {
+        statusElement.parentNode.removeChild(statusElement);
+    }
+}
+
+function renderVideos(items) {
+    const videoContainer = document.getElementById('videos');
+
+    items.forEach(item => {
+        const videoId = item.id && item.id.videoId;
+        const videoTitle = item.snippet.title;
+        const videoDescription = item.snippet.description;
+        const thumbnails = item.snippet.thumbnails;
+        const thumbnailHigh = (thumbnails.high && thumbnails.high.url) || thumbnails.medium.url; // 480x360 px
+
+        if (!videoId || videoTitle.includes(' #')) {
+            return;
+        }
+
+        // Créer l'élément vidéo
+        const videoDiv = document.createElement('div');
+        videoDiv.classList.add('col-md-4', 'col-xs-6');
+        videoDiv.style.backgroundImage = `url(${thumbnailHigh})`;
+
+        videoDiv.innerHTML = `
+            <div class="col-xs-12 infoVideo" data-toggle="modal" data-target="#myModal" data-youtube="${videoId}" data-description="${videoDescription}" onclick="modalUpdate(this)">
+                <a title="Ouvrir la vidéo dans une nouvelle fenêtre" href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="physicalLink"><i class="fa fa-external-link"></i></a>
+                <i class="fa fa-video-camera"></i>
+                <h4 class="videoTitle">${videoTitle}</h4>
+            </div>
+        `;
+
+        // Ajouter la vidéo au conteneur
+        videoContainer.appendChild(videoDiv);
+    });
+}
+
+async function fetchAllVideos() {
+    let loadedCount = 0;
+    let pageToken = '';
+    let expectedCount = null;
+
+    do {
+        const pageUrl = pageToken ? `${API_URL}&pageToken=${pageToken}` : API_URL;
+        const response = await fetch(pageUrl);
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error && data.error.message ? data.error.message : 'Erreur inconnue lors de la récupération des vidéos');
+        }
+
+        const pageItems = data.items || [];
+        if (expectedCount === null && data.pageInfo && typeof data.pageInfo.totalResults === 'number') {
+            expectedCount = data.pageInfo.totalResults;
+        }
+
+        renderVideos(pageItems);
+        loadedCount += pageItems.filter(item => item.id && item.id.videoId && !item.snippet.title.includes(' #')).length;
+        updateLoadingStatus(loadedCount, expectedCount);
+        pageToken = data.nextPageToken || '';
+    } while (pageToken);
+
+    hideLoadingStatus();
+}
+
+fetchAllVideos()
     .catch(error => {
         console.error('Erreur lors de la récupération des vidéos :', error);
     });
